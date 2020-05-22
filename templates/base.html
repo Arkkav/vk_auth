@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>
+	{% block title %}
+        {% if user.is_authenticated %}
+            {{ user.get_full_name | capfirst }}
+        {% else %}
+            Авторизация
+        {% endif %}
+    {% endblock title %}
+ </title>
+</head>
+<body>
+    {% block navi %}
+        {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Выйти</button>
+        {% else %}
+            <form action="{% url 'social:begin' 'vk-oauth2' %}">
+                <button type="submit" class="btn btn-primary">Авторизоваться</button>
+         {% endif %}
+    {% endblock navi %}
+
+    {% block content %}
+	{% endblock content %}
+</body>
+</html>

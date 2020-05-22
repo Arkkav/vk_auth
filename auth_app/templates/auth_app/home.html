@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ block.super }}
+{% endblock %}
+
+{% block navi %}
+    {{ block.super }}
+{% endblock navi %}
+
+{% block content %}
+    <h3>
+        Здравствуйте, <a class="your_name" href="https://vk.com/{{ user.username }}">{{ user.get_full_name }}</a>
+    </h3>
+
+    {% if response.items %}
+        {% for item in response.items %}
+            <div>
+                <a class="friend_name" href="https://vk.com/id{{ item.id }}">{{ item.last_name }} {{ item.first_name }}</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h4>Нет друзей</h4>
+    {% endif %}
+{% endblock content%}
+
