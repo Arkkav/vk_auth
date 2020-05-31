@@ -33,9 +33,9 @@ SOCIAL_AUTH_LOGIN_ERROR_URL = '/auth_app/'
 SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
