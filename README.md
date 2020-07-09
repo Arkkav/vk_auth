@@ -22,7 +22,7 @@
 git clone https://github.com/Arkkav/vk_auth.git vk_auth
 cd vk_auth
 python3 -m venv env
-./env/bin/activate
+. env/bin/activate
 pip3 install -r requirements.txt
 sudo docker-compose build
 ```
